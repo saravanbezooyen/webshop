@@ -15,7 +15,7 @@
 				<td>hond</td>
 				<td>Koorts, eet slecht, blaft veel te veel</td>
 				<td>John Doe</td>
-				<td class="center"><a href="edit/<?php echo $patient["ID"]; ?>">edit</a></td>
+				<td class="center"><a href="edit/<?php echo $patient["ID"]; ?>"></a></td>
 				<td class="center"><a href="#">delete</a></td>
 			</tr>
 		</tbody>

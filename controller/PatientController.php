@@ -1,10 +1,10 @@
 <?php
 
-require(ROOT . "model/HospitalModel.php");
+require(ROOT . "model/PatientModel.php");
 
 function index()
 {
-	render("hospital/index"));
+	render("hospital/index");
 }
 
 function create()
@@ -14,24 +14,24 @@ function create()
 
 function createSave()
 {
-	if (!createHospital()) {
+	if (!createPatient()) {
 		header("Location:" . URL . "error/index");
 		exit();
 	}
 
-	header("Location:" . URL . "birthday/index");
+	header("Location:" . URL . "hospital/index");
 }
 
 function edit($id)
 {
 	render("hospital/edit", array(
-		'hospital' => getBirthday($id)
+		'patient' => getPatient($ID)
 	));
 }
 
-function editSave()
+function editPatient()
 {
-	if (!editHospital()) {
+	if (!editPatient()) {
 		header("Location:" . URL . "error/index");
 		exit();
 	}
