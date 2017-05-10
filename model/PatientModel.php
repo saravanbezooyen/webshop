@@ -18,7 +18,13 @@ function getAllPatients()
 {
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM patients";
+	$sql = "SELECT `patients`.*, `pets`.Name as species,  `clients`.FirstName, `clients`.LastName
+			FROM `patients`
+			INNER JOIN `pets`
+			ON `patients`.PetID = `pets`.ID
+			INNER JOIN `clients`
+			ON `patients`.ClientID = `clients`.ID" ;
+
 	$query = $db->prepare($sql);
 	$query->execute();
 

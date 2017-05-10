@@ -4,12 +4,14 @@ require(ROOT . "model/PatientModel.php");
 
 function index()
 {
-	render("hospital/index");
+
+	render("patients/index", array(
+		'patients' => getAllPatients()));
 }
 
 function create()
 {
-	render("hospital/create");
+	render("patients/create");
 }
 
 function createSave()
@@ -19,32 +21,32 @@ function createSave()
 		exit();
 	}
 
-	header("Location:" . URL . "hospital/index");
+	header("Location:" . URL . "patients/index");
 }
 
-function edit($id)
+function edit($ID)
 {
-	render("hospital/edit", array(
+	render("patients/edit", array(
 		'patient' => getPatient($ID)
 	));
 }
 
-function editPatient()
+function editSave()
 {
 	if (!editPatient()) {
 		header("Location:" . URL . "error/index");
 		exit();
 	}
 
-	header("Location:" . URL . "hospital/index");
+	header("Location:" . URL . "patient/index");
 } 
 
-function delete($id)
+function delete($ID)
 {
-	if (!deleteHospital($id)) {
+	if (!deletePatient($ID)) {
 		header("Location:" . URL . "error/index");
 		exit();
 	}
 
-	header("Location:" . URL . "hospital/index");
+	header("Location:" . URL . "patients/index");
 }

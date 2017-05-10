@@ -4,12 +4,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Hospital</title>
-  	<link rel="stylesheet" href="<?= URL ?>public/css/style.css">
-</head>
+  	<link href="public/css/style.css" rel="stylesheet" type="text/css">
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"></head>
 <body>
-	<h1>Hospital</h1>
-		<ul>
-			<li><a href="patients.php">Patiënts</a></li>
-			<li><a href="clients.php">Clients</a></li>
-			<li><a href="species.php">Species</a></li>
-		</ul>
+		<div class="cssmenu"><ul>
+			<li><a href="<?= URL ?>patient">Patiënts</a></li>
+			<li><a href="<?= URL ?>client">Clients</a></li>
+			<li><a href="<?= URL ?>pet">Species</a></li>
+		</ul></div>
