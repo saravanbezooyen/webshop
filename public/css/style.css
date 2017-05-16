@@ -18,8 +18,9 @@
   position: relative;
   box-sizing: border-box;
 }
+
 .cssmenu:after,
-.cssmenu > ul:after {
+.cssmenu ul:after {
   content: ".";
   display: block;
   clear: both;
@@ -27,20 +28,23 @@
   line-height: 0;
   height: 0;
 }
+
 .cssmenu {
   width: auto;
   border-bottom: 3px solid #ed1c40;
   font-family: Raleway, sans-serif;
   line-height: 1;
 }
+
 .cssmenu ul {
   background: #ffffff;
 }
-.cssmenu > ul > li {
+
+.cssmenu ul li {
   float: left;
 }
 
-.cssmenu > ul > li > a {
+.cssmenu ul li a {
   z-index: 2;
   padding: 18px 25px 12px 25px;
   font-size: 15px;
@@ -51,13 +55,13 @@
   margin-right: -4px;
 }
 
-.cssmenu > ul > li:active > a,
-.cssmenu > ul > li:hover > a,
-.cssmenu > ul > li > a:hover {
+.cssmenu ul li a:active,
+.cssmenu ul li:hover a,
+.cssmenu ul li a:hover {
   color: #ffffff;
 }
 
-.cssmenu > ul > li > a:after {
+.cssmenu ul li a:after {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -73,9 +77,9 @@
   transform-origin: bottom;
 }
 
-.cssmenu > ul > li.active > a:after,
-.cssmenu > ul > li:hover > a:after,
-.cssmenu > ul > li > a:hover:after {
+.cssmenu ul li:active a:after,
+.cssmenu ul li:hover a:after,
+.cssmenu ul li a:hover:after {
   background: #ed1c40;
 }
 
@@ -89,7 +93,7 @@ table {
   line-height: 40px;
   border-spacing: 0;
   border: 2px solid #ed1c40;
-  width: 50%;
+  width: 60%;
   margin: 50px auto;
   border-radius: .25rem;
 }
@@ -145,7 +149,6 @@ td:last-child {
   text-align: center;
   font-family: 'Raleway', sans-serif;
   text-transform: none;
-
 }
 
 .create:hover {
