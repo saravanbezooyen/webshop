@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Hospital</title>
-  	<link href="public/css/style.css" rel="stylesheet" type="text/css" url="<?= URL ?>public/css/style.css">
+  	<link href="<?= URL ?>public/css/style.css" rel="stylesheet" type="text/css">
   	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"></head>
 <body>

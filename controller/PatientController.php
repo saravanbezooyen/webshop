@@ -1,17 +1,23 @@
 <?php
 
 require(ROOT . "model/PatientModel.php");
+require(ROOT . "model/ClientModel.php");
+require(ROOT . "model/PetModel.php");
 
 function index()
 {
 
 	render("patients/index", array(
-		'patients' => getAllPatients()));
+		'patients' => getAllPatients()
+	));
 }
 
 function create()
 {
-	render("patients/create");
+	render("patients/create", array(
+		'clients' => getAllClients(),
+		'species' => getAllPets()
+	));
 }
 
 function createSave()
@@ -21,13 +27,15 @@ function createSave()
 		exit();
 	}
 
-	header("Location:" . URL . "patients/index");
+	header("Location:" . URL . "patient/index");
 }
 
 function edit($ID)
 {
 	render("patients/edit", array(
-		'patient' => getPatient($ID)
+		'patient' => getPatient($ID),
+		'clients' => getAllClients(),
+		'species' => getAllPets()
 	));
 }
 

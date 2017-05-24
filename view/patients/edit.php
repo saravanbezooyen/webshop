@@ -2,8 +2,18 @@
 	<h1>Patient bewerken</h1>
 	<form action="<?= URL ?>patient/editSave" method="post">
 	
-		<p><input type="text" name="ClientID" value="<?= $patient['ClientID']; ?>"></p>
-		<p><input type="text" name="PetID" value="<?= $patient['PetID']; ?>"></p>
+		<select name="ClientID">
+			<?php foreach ($clients as $client) { ?>
+			<option value="<?= $client['ID'] ?>"><?= $client['FirstName'] . " " . $client['LastName'] ?></option>
+			<?php } ?>
+		</select>
+
+		<select name="PetID">
+			<?php foreach ($species as $pet) { ?>
+			<option value="<?= $pet['ID'] ?>"><?= $pet['Name'] ?></option>
+			<?php } ?>
+		</select>
+
 		<p><input type="text" name="Name" value="<?= $patient['Name']; ?>"></p>
 
 		<input type="hidden" name="ID" value="<?= $patient['ID']; ?>">
