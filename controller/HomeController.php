@@ -2,5 +2,5 @@
 
 function index()
 {
-	render("patients/index");	
+	render("home/index");	
 }

@@ -1,16 +1,4 @@
-<?php 
-header("Location:" . URL . "hospital/") ?>
-<!doctype html>
-
-<html>
-	<head>
-		<title>Hospital</title>
-        <link href="public/css/style.css" rel="stylesheet" type="text/css">
-	</head>
-	
-	<body>
-    <h1>hoi</h1>
-    <a href="<?= URL ?>Hospital/">Hospital</a>
-
-	</body>
-</html>
+<div class="container">
+ <h1>Welkom bij het php-framework.</h1>
+ <p>Je bent nu in home/index.</p>
+</div>
