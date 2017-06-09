@@ -7,13 +7,13 @@
 			<th colspan="2">Actie</th>
 		</tr>
 		
-		<?php foreach ($categories as $categorie) { ?>
+		<?php foreach ($categories as $category) { ?>
 		<tr>
-			<td><?= $categorie['categories_id']; ?></td>
-			<td><?= $categorie['categories_name']; ?></td>
+			<td><?= $category['category_id']; ?></td>
+			<td><?= $category['category_description']; ?></td>
 
-			<td><a href="<?= URL ?>categories/edit/<?= $categorie['categories_id'] ?>">Edit</a></td>
-			<td><a href="<?= URL ?>categories/delete/<?= $categorie['categories_id'] ?>">Delete</a></td>
+			<td><a href="<?= URL ?>categories/edit/<?= $category['category_id'] ?>">Edit</a></td>
+			<td><a href="<?= URL ?>categories/delete/<?= $category['category_id'] ?>">Delete</a></td>
 		</tr>
 		<?php } ?>
 

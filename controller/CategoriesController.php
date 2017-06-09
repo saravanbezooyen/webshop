@@ -16,7 +16,7 @@ function create()
 
 function createSave()
 {
-	if (!createCategories()) {
+	if (!createCategory()) {
 		header("Location:" . URL . "error/index");
 		exit();
 	}
@@ -24,16 +24,16 @@ function createSave()
 	header("Location:" . URL . "categories/index");
 }
 
-function edit($categories_id)
+function edit($category_id)
 {
 	render("categories/edit", array(
-		'categorie' => getCategories($categories_id)
+		'category' => getCategory($category_id)
 	));
 }
 
 function editSave()
 {
-	if (!editCategories()) {
+	if (!editCategory()) {
 		header("Location:" . URL . "error/index");
 		exit();
 	}
@@ -41,9 +41,9 @@ function editSave()
 	header("Location:" . URL . "categories/index");
 } 
 
-function delete($categories_id)
+function delete($category_id)
 {
-	if (!deleteCategories($categories_id)) {
+	if (!deleteCategory($category_id)) {
 		header("Location:" . URL . "error/index");
 		exit();
 	}

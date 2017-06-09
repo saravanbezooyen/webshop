@@ -1,6 +1,7 @@
 <?php
 
 require(ROOT . "model/ProductModel.php");
+require(ROOT . "model/CategoriesModel.php");
 
 function index()
 {
@@ -11,7 +12,10 @@ function index()
 
 function create()
 {
-	render("product/create");
+	render("product/create", array(
+		'products' => getAllProducts(),
+		'categories' => getAllCategories()
+	));
 }
 
 function createSave()
@@ -27,7 +31,8 @@ function createSave()
 function edit($product_id)
 {
 	render("product/edit", array(
-		'product' => getProduct($product_id)
+		'product' => getProduct($product_id),
+		'categories' => getAllCategories()
 	));
 }
 

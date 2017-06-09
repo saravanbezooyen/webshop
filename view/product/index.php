@@ -5,6 +5,7 @@
 			<th>Name</th>
 			<th>Description</th>
 			<th>Price</th>
+			<th>Category</th>
 			<th colspan="2">Actie</th>
 		</tr>
 		
@@ -14,6 +15,7 @@
 			<td><?= $product['product_name']; ?></td>
 			<td><?= $product['product_description']; ?></td>
 			<td><?= $product['product_price']; ?></td>
+			<td><?= $product['category_description']; ?></td>
 			<td><a href="<?= URL ?>product/edit/<?= $product['product_id'] ?>">Edit</a></td>
 			<td><a href="<?= URL ?>product/delete/<?= $product['product_id'] ?>">Delete</a></td>
 		</tr>

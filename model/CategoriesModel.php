@@ -1,13 +1,13 @@
 <?php
 
-function getCategories($categories_id) 
+function getCategory($category_id) 
 {
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM categories WHERE categories_id = :id";
+	$sql = "SELECT * FROM categories WHERE category_id = :id";
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		":id" => $categories_id));
+		":id" => $category_id));
 
 	$db = null;
 
@@ -27,60 +27,60 @@ function getAllCategories()
 	return $query->fetchAll();
 }
 
-function editCategories() 
+function editCategory() 
 {
-	$categories_name = isset($_POST['categories_name']) ? $_POST['categories_name'] : null;
-	$categories_id = isset($_POST['categories_id']) ? $_POST['categories_id'] : null;
+	$category_description = isset($_POST['category_description']) ? $_POST['category_description'] : null;
+	$category_id = isset($_POST['category_id']) ? $_POST['category_id'] : null;
 	
-	if (strlen($categories_name) == 0) {
+	if (strlen($category_description) == 0) {
 		return false;
 	}
 	
 	$db = openDatabaseConnection();
 
-	$sql = "UPDATE categories SET categories_name = :categories_name WHERE categories_id = :categories_id";
+	$sql = "UPDATE categories SET category_description = :category_description WHERE category_id = :category_id";
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		':categories_name' => $categories_name,
-		':categories_id' => $categories_id));
+		':category_description' => $category_description,
+		':category_id' => $category_id));
 
 	$db = null;
 	
 	return true;
 }
 
-function deleteCategories($categories_id = null) 
+function deleteCategory($category_id = null) 
 {
-	if (!$categories_id) {
+	if (!$category_id) {
 		return false;
 	}
 	
 	$db = openDatabaseConnection();
 
-	$sql = "DELETE FROM categories WHERE categories_id=:categories_id ";
+	$sql = "DELETE FROM categories WHERE category_id=:category_id ";
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		':categories_id' => $categories_id));
+		':category_id' => $categories_id));
 
 	$db = null;
 	
 	return true;
 }
 
-function createCategories() 
+function createCategory() 
 {
-	$categories_name = isset($_POST['categories_name']) ? $_POST['categories_name'] : null;
+	$category_description = isset($_POST['category_description']) ? $_POST['category_description'] : null;
 	
-	if (strlen($categories_name) == 0) {
+	if (strlen($category_description) == 0) {
 		return false;
 	}
 	
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO categories(categories_name) VALUES (:categories_name)";
+	$sql = "INSERT INTO categories(category_description) VALUES (:category_description)";
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		':categories_name' => $categories_name));
+		':category_description' => $category_description));
 
 	$db = null;
 	
