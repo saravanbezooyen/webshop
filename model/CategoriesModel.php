@@ -9,9 +9,10 @@ function getCategory($category_id)
 	$query->execute(array(
 		":id" => $category_id));
 
-	$db = null;
+	
 
 	return $query->fetch();
+	$db = null;
 }
 
 function getAllCategories() 

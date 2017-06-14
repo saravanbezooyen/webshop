@@ -5,5 +5,6 @@ require(ROOT . "model/CategoriesModel.php");
 
 function index()
 {
-	render("home/index");	
+
+	render("home/index", array('categories' => getAllCategories()));	
 }

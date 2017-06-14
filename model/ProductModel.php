@@ -35,6 +35,24 @@ function getAllProducts()
 	return $query->fetchAll();
 }
 
+function getAllProductsByCategory($category_id) 
+{
+	$db = openDatabaseConnection();
+
+	$sql = "SELECT `products`.*, `categories`.`category_description`
+			FROM `products`
+			INNER JOIN `categories`
+			ON `products`.`category_id` = `categories`.`category_id`
+			WHERE `products`.`category_id` = :category_id";
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		':category_id' => $category_id));
+
+	$db = null;
+
+	return $query->fetchAll();
+}
+
 function editProduct() 
 {
 	$product_name = isset($_POST['product_name']) ? $_POST['product_name'] : null;
